@@ -162,45 +162,5 @@ public class AddressBookMain {
 	    	  
 	      }
 	      
-	      public static void main(String[] args) {
-	    	  
-	    	  AddressBookMain a= new AddressBookMain();
-	    	  int j=1;
-		  Scanner sc2=new Scanner(System.in);
-	    	  
-	    	  while(j==1)
-	    	  {
-	    		
-	    	    System.out.println("\n1.Add\n2.Edit\n3.Delete\nEnter your choice : ");
-	    	    
-	    	    int choicem = sc2.nextInt();
-	    	 
-	    	    switch(choicem)
-	    	    {
-	    		  case 1:
-	    			  a.AddName();
-	    			  break;
-	    			  
-	    		  case 2:
-	    			  System.out.println("Enter name to edit");
-	    			  
-	    			  String a1= sc2.nextLine();
-	    			  a.edit(a1);
-	    			  break;
-	    			  
-	    		  case 3:
-	    		  	  System.out.println("Enter name to delete");
-	    			 
-	    			  String a2=sc2.nextLine();
-	    			  a.delete(a2);
-	    			  break;
-	    			  
-	    		  default:
-	    			  System.out.println("End!");
-	    			  j=0;
-	    	  
-	    	    }
-	    	}  
-	    	  
-		}
+	     
 }
