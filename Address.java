@@ -22,4 +22,12 @@ public class Address {
 		this.number = number;
 		this.email = email;
 	}
+	public Address()
+	{
+		
+	}
+	public void Display()
+	{
+		System.out.println(firstname+" "+lastname+" "+address+" "+city+" "+state+" "+zip+" "+number+" "+email);
+	}
 }
