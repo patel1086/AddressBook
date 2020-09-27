@@ -22,8 +22,4 @@ public class Address {
 		this.number = number;
 		this.email = email;
 	}
-	
-	public static void main(String[] args) {
-		System.out.println("Welcome to Address book");
-	}
 }
