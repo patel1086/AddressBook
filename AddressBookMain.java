@@ -3,13 +3,17 @@ import java.util.*;
 public class AddressBookMain {
 	
 	public static ArrayList<Address> persons;
+	public HashMap<String,Address> persons_a;
+    public HashMap<String,Address> persons_b;
 	
 	
 	 Scanner sc= new Scanner(System.in);
 	
 	      public AddressBookMain() 
 	      {
-	            persons = new ArrayList<Address>();    
+	            persons = new ArrayList<Address>();  
+	            persons_a=new HashMap<>();
+	            persons_b=new HashMap<>();
 	      }
 	      
 	      public void Finddetails(String city)
@@ -47,6 +51,20 @@ public class AddressBookMain {
 	    	  }
 			return findname;
 	    	  
+	      }
+	      public void FindDetailsbyCarbyMap(String city)
+	      {
+
+	          Address details= persons_a.get(city);
+	          System.out.println("\n"+details.firstname+" "+details.lastname+" "+details.address+" "+details.city+" "+details.state+" "+details.email+" "+details.zip+"\n");
+	       
+	      }
+	      public void FindDetailsbyStatebyMap(String state)
+	      {
+
+	          Address details= persons_b.get(state);
+	          System.out.println("\n"+details.firstname+" "+details.lastname+" "+details.address+" "+details.city+" "+details.state+" "+details.email+" "+details.zip+"\n");
+	       
 	      }
 	      public void AddName()
 	      {
