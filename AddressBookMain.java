@@ -38,8 +38,18 @@ public class AddressBookMain {
 	    	  System.out.println("Enter your details\n");
 	    	  System.out.println("First name\n");
 	    	  a=sc.nextLine();
+		  
 	    	  System.out.println("Last name\n");
 	    	  b=sc.nextLine();
+		  for(int i=0;i<persons.size();i++)
+		  {
+		      Address name=(Address)persons.get(i);
+		      if(a.equals(name.firstname) && b.equals(name.lastname))
+		       {
+			System.out.println("ohhhhh! Name Already Taken");
+			return;
+			}
+		  }
 	    	  System.out.println("Address\n");
 	    	  z=sc.nextLine();
 	    	  System.out.println("City\n");
