@@ -132,6 +132,45 @@ public class AddressBookList {
 	         }
 	    	
 	    }
+	    public void TotalcontactByCity(String city)
+	    {
+	        int count_car=0;
+	        for(Map.Entry<String, AddressBookMain> entry: addressbooklist.entrySet())
+	        {
+
+	            for(int i=0;i<(entry.getValue()).persons.size();i++)
+	            {
+	                Address details= (Address)entry.getValue().persons.get(i);
+
+	                if(city.equals(details.city))
+	                {
+	                   count_car++;
+	                }
+
+	            }
+	        }
+	        System.out.println("Total number of people in this city: "+count_car);
+	    }
+	    public void TotalcontactByState(String state)
+	    {
+	        int count_state=0;
+	        for(Map.Entry<String, AddressBookMain> entry: addressbooklist.entrySet())
+	        {
+	            //AddressBookMain a1=entry.getValue();
+
+	            for(int i=0;i<(entry.getValue()).persons.size();i++)
+	            {
+	                Address details= (Address)entry.getValue().persons.get(i);
+
+	                if(state.equals(details.state))
+	                {
+	                   count_state++;
+	                }
+
+	            }
+	        }
+	        System.out.println("Total number of people in this state: "+count_state);
+	    }
 	public static void main(String[] args) 
 	{
 		System.out.println("Welcome to AddressBookManagementSystem");
@@ -140,7 +179,7 @@ public class AddressBookList {
 		int j=1;
 		while(j==1)
 		{
-			System.out.println("1.Enter new address book\n2.Search Contact Details By City Name\n3.Search contact Details by State Name\n4.Search Details By Car By HashMap\n5.Search Details By State By HashMap\n6.Exit");
+			System.out.println("1.Enter new address book\n2.Search Contact Details By City Name\n3.Search contact Details by State Name\n4.Search Details By Car By HashMap\n5.Search Details By State By HashMap\n6.Total contact count details by City\n7.Total contact count details by State\n8.Exit");
 			Scanner sc2= new Scanner(System.in);
 			int choice=sc2.nextInt();
 			switch(choice)
@@ -175,7 +214,17 @@ public class AddressBookList {
             	 String state_a= sc1.nextLine();
             	 contactdetails.FetchDetailsbyStatebyHashmap(state_a);
                  break;
-             case 6:
+            case 6:
+	           	 System.out.println("Enter city name: ");
+	           	 String city_b= sc1.nextLine();
+	           	 contactdetails.TotalcontactByCity(city_b);
+                break;
+            case 7:
+           	 	System.out.println("Enter state name: ");
+           	 	String state_b =sc1.nextLine();
+           	    contactdetails.TotalcontactByState(state_b);
+                break;
+             case 8:
 				System.out.println("Succesfilly Exit");
 				j=0;
 				//sc.close();
