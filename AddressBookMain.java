@@ -12,7 +12,21 @@ public class AddressBookMain {
 	            persons = new ArrayList<Address>();    
 	      }
 	      
-	      
+	      public void Finddetails(String city)
+	      {
+
+	          for(int i=0;i<persons.size();i++)
+	          {
+	              Address details= (Address)persons.get(i);
+
+	              if(city.equals(details.city))
+	              {
+	                  System.out.println("\n"+details.firstname+" "+details.lastname+" "+details.address+" "+details.city+" "+details.email+" "+details.zip+"\n");
+	              }
+
+	          }
+	       
+	      }
 	      public static Address Findname(String name)
 	      {
 	    	  Address findname=new Address();
@@ -24,11 +38,13 @@ public class AddressBookMain {
 	    		  if(name.equals(c.firstname))
 	    		  {
 	    			   findname=c;
+	    			   System.out.println("\n"+findname.firstname+" "+findname.lastname+" "+findname.address+" "+findname.city+" "+findname.email+" "+findname.zip+"\n");
+	    			   break;
 	    		  }
 	    		  
-	    	  }
-	    	  System.out.println("\n"+findname.firstname+" "+findname.lastname+" "+findname.address+" "+findname.city+" "+findname.email+" "+findname.zip+"\n");
 	    	  
+	    	
+	    	  }
 			return findname;
 	    	  
 	      }
